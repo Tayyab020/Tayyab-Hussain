@@ -56,14 +56,13 @@
     >
     <div class="banner_content">
       <div class="banner_content_content">
-        <h1>The Gift Guide</h1>
+        <h1>{{section.settings.banner_content_title }}</h1>
         <p>
-          Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts
-          to delight your loved ones this holiday season.
+         {{ section.settings.banner_body_content_paragraph }}
         </p>
         <a href="#" class="banner_content_button">
           <div>
-            {{ section.settings.banner_header_button_text }}
+            {{ section.settings.banner_body_content_button_text }}
           </div>
 
           <img
@@ -207,7 +206,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 5rem 0px 50px 9rem;
+  padding: 3rem 0px 50px 5rem;
 }
 .banner_content_content p {
   margin: 10px 0px 10px 0px;
@@ -280,13 +279,15 @@
     }
 @media (max-width: 1440px) {
   .banner_content_content h1 {
-    font-size: 6.5rem;
+    font-size: 6rem !important;
+    font-weight:bold !important;
   }
   .banner_content_content {
-    padding: 5rem 0px 0px 9rem;
+    padding: 3rem 0px 0px 5rem;
   }
   .banner_content_content p {
-    margin: 40px 0px 40px 0px;
+    margin: 20px 0px 20px 0px;
+
   }
   .products-grid {
     margin: 5rem 0 2rem 0 !important ;
@@ -297,7 +298,7 @@
         padding: 2rem 0px 0px 4rem;
     }
     .banner_content_content h1 {
-        font-size: 3rem !important;
+        font-size: 5rem !important;
         font-weight: bold;
     }
         .banner_content_content p {
@@ -528,6 +529,22 @@
   }
 }
 
+.banner_content_content h1 {
+    font-size: 5rem ;
+    font-weight:bold !important;
+  }
+.banner_content_content p {
+    font-size: 2.2rem ;
+   
+  }
+  @media(max-width:1080px){
+  .banner_content_content p {
+    font-size: 1.5rem ;
+   
+  }
+
+  }
+}
 
 </style>
 {% schema %}
@@ -568,7 +585,27 @@
       "type": "text",
       "label": "Banner below Text",
       "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES ACTIVEWEAR"
-    }
+    },
+      {
+      "id": "banner_content_title",
+      "type": "text",
+      "label": "Banner Content Title",
+      "default": "The Gift Guide"
+    },
+     {
+      "id": "banner_body_content_paragraph",
+      "type": "text",
+      "label": "Banner Content Title",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+     {
+      "id": "banner_body_content_button_text",
+      "type": "text",
+      "label": "Banner Content Title",
+      "default": "Shop Now"
+    },
+     
+
   ]
 }
 {% endschema %}
